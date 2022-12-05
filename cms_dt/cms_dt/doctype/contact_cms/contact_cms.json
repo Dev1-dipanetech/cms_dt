@@ -14,7 +14,6 @@
   "middle_name",
   "last_name",
   "email_id",
-  "user",
   "address",
   "sync_with_google_contacts",
   "cb00",
@@ -34,7 +33,14 @@
   "sb_01",
   "email_ids",
   "phone_nos",
-  "is_primary_contact"
+  "is_primary_contact",
+  "reference_section",
+  "links",
+  "lft",
+  "rgt",
+  "is_group",
+  "old_parent",
+  "parent_contact_cms"
  ],
  "fields": [
   {
@@ -78,17 +84,10 @@
    "search_index": 1
   },
   {
-   "fieldname": "user",
-   "fieldtype": "Link",
-   "in_global_search": 1,
-   "label": "User Id",
-   "options": "User"
-  },
-  {
    "fieldname": "address",
    "fieldtype": "Link",
    "label": "Address",
-   "options": "Address"
+   "options": "Address CMS"
   },
   {
    "default": "0",
@@ -210,17 +209,65 @@
    "label": "Is Primary Contact",
    "oldfieldname": "is_primary_contact",
    "oldfieldtype": "Select"
+  },
+  {
+   "fieldname": "reference_section",
+   "fieldtype": "Section Break",
+   "label": "Reference"
+  },
+  {
+   "default": "cms-dt",
+   "fieldname": "links",
+   "fieldtype": "Table",
+   "label": "Links",
+   "options": "Dynamic Link"
+  },
+  {
+   "fieldname": "lft",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Left",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "rgt",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Right",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "label": "Is Group"
+  },
+  {
+   "fieldname": "old_parent",
+   "fieldtype": "Link",
+   "label": "Old Parent",
+   "options": "Contact CMS"
+  },
+  {
+   "fieldname": "parent_contact_cms",
+   "fieldtype": "Link",
+   "label": "Parent Contact CMS",
+   "options": "Contact CMS"
   }
  ],
  "icon": "fa fa-user",
  "image_field": "image",
  "index_web_pages_for_search": 1,
+ "is_tree": 1,
  "links": [],
- "modified": "2022-12-01 13:23:49.538069",
+ "modified": "2022-12-05 14:57:14.978786",
  "modified_by": "Administrator",
  "module": "cms-dt",
  "name": "Contact CMS",
  "name_case": "Title Case",
+ "nsm_parent_field": "parent_contact_cms",
  "owner": "Administrator",
  "permissions": [
   {
