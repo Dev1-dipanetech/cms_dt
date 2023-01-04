@@ -2,7 +2,7 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "format:{company}",
- "creation": "2022-12-01 13:57:55.750770",
+ "creation": "2023-01-02 16:33:24.171297",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -29,15 +29,19 @@
   "rgt",
   "is_group",
   "old_parent",
-  "parent_company_cms",
-  "route",
-  "published"
+  "parent_company_cms"
  ],
  "fields": [
   {
    "fieldname": "company",
    "fieldtype": "Data",
    "label": "Company"
+  },
+  {
+   "fieldname": "contact",
+   "fieldtype": "Link",
+   "label": "Contact",
+   "options": "Contact CMS"
   },
   {
    "fieldname": "fax",
@@ -58,6 +62,10 @@
    "fieldname": "ticker",
    "fieldtype": "Data",
    "label": "Ticker"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
   },
   {
    "fieldname": "address_1",
@@ -90,6 +98,10 @@
    "label": "Country"
   },
   {
+   "fieldname": "column_break_14",
+   "fieldtype": "Column Break"
+  },
+  {
    "fieldname": "idstatus",
    "fieldtype": "Data",
    "label": "ID/Status"
@@ -103,20 +115,6 @@
    "fieldname": "industry",
    "fieldtype": "Data",
    "label": "Industry"
-  },
-  {
-   "fieldname": "column_break_7",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_14",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "contact",
-   "fieldtype": "Link",
-   "label": "Contact",
-   "options": "Contact CMS"
   },
   {
    "fieldname": "lft",
@@ -144,29 +142,16 @@
    "fieldname": "old_parent",
    "fieldtype": "Link",
    "label": "Old Parent",
-   "options": "Company CMS"
+   "options": "Organisation CMS"
   },
   {
    "fieldname": "parent_company_cms",
    "fieldtype": "Link",
    "label": "Parent Company CMS",
-   "options": "Company CMS"
-  },
-  {
-   "fieldname": "route",
-   "fieldtype": "Data",
-   "label": "Route"
-  },
-  {
-   "default": "0",
-   "fieldname": "published",
-   "fieldtype": "Check",
-   "label": "Published"
+   "options": "Organisation CMS"
   }
  ],
- "has_web_view": 1,
  "index_web_pages_for_search": 1,
- "is_published_field": "published",
  "is_tree": 1,
  "links": [
   {
@@ -175,10 +160,10 @@
    "link_fieldname": "phone"
   }
  ],
- "modified": "2023-01-02 15:31:21.074351",
+ "modified": "2023-01-02 16:33:24.171297",
  "modified_by": "Administrator",
  "module": "cms-dt",
- "name": "Company CMS",
+ "name": "Organisation CMS",
  "naming_rule": "Expression",
  "nsm_parent_field": "parent_company_cms",
  "owner": "Administrator",
@@ -196,7 +181,6 @@
    "write": 1
   }
  ],
- "route": "company-cms",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

@@ -16,21 +16,13 @@
   "salutation",
   "customer_name",
   "customer_type",
-  "customer_group",
   "column_break0",
-  "territory",
   "gender",
+  "contact",
   "lead_name",
   "opportunity_name",
   "image",
-  "internal_customer_section",
-  "is_internal_customer",
-  "represents_company",
-  "column_break_70",
-  "companies",
   "more_info",
-  "market_segment",
-  "industry",
   "customer_pos_id",
   "website",
   "language",
@@ -77,6 +69,7 @@
    "fieldname": "customer_name",
    "fieldtype": "Data",
    "in_global_search": 1,
+   "in_list_view": 1,
    "label": "Customer Name",
    "no_copy": 1,
    "oldfieldname": "customer_name",
@@ -88,6 +81,7 @@
    "default": "Company",
    "fieldname": "customer_type",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Customer Type",
    "oldfieldname": "customer_type",
    "oldfieldtype": "Select",
@@ -95,33 +89,9 @@
    "reqd": 1
   },
   {
-   "fieldname": "customer_group",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Customer Group",
-   "oldfieldname": "customer_group",
-   "oldfieldtype": "Link",
-   "options": "Customer Group",
-   "reqd": 1,
-   "search_index": 1
-  },
-  {
    "fieldname": "column_break0",
    "fieldtype": "Column Break",
    "width": "50%"
-  },
-  {
-   "fieldname": "territory",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Territory",
-   "oldfieldname": "territory",
-   "oldfieldtype": "Link",
-   "options": "Territory",
-   "print_hide": 1,
-   "reqd": 1
   },
   {
    "depends_on": "eval:doc.customer_type != 'Company'",
@@ -158,57 +128,12 @@
   },
   {
    "collapsible": 1,
-   "collapsible_depends_on": "is_internal_customer",
-   "fieldname": "internal_customer_section",
-   "fieldtype": "Section Break",
-   "label": "Internal Customer"
-  },
-  {
-   "default": "0",
-   "fieldname": "is_internal_customer",
-   "fieldtype": "Check",
-   "label": "Is Internal Customer"
-  },
-  {
-   "depends_on": "is_internal_customer",
-   "fieldname": "represents_company",
-   "fieldtype": "Link",
-   "ignore_user_permissions": 1,
-   "label": "Represents Company",
-   "options": "Company",
-   "unique": 1
-  },
-  {
-   "fieldname": "column_break_70",
-   "fieldtype": "Column Break"
-  },
-  {
-   "depends_on": "represents_company",
-   "fieldname": "companies",
-   "fieldtype": "Table",
-   "label": "Allowed To Transact With",
-   "options": "Allowed To Transact With"
-  },
-  {
-   "collapsible": 1,
    "collapsible_depends_on": "customer_details",
    "fieldname": "more_info",
    "fieldtype": "Section Break",
    "label": "More Information",
    "oldfieldtype": "Section Break",
    "options": "fa fa-file-text"
-  },
-  {
-   "fieldname": "market_segment",
-   "fieldtype": "Link",
-   "label": "Market Segment",
-   "options": "Market Segment"
-  },
-  {
-   "fieldname": "industry",
-   "fieldtype": "Link",
-   "label": "Industry",
-   "options": "Industry Type"
   },
   {
    "fieldname": "customer_pos_id",
@@ -321,19 +246,19 @@
    "fieldtype": "Text",
    "label": "Primary Address",
    "read_only": 1
+  },
+  {
+   "fieldname": "contact",
+   "fieldtype": "Link",
+   "label": "Contact",
+   "options": "Contact CMS"
   }
  ],
  "icon": "fa fa-user",
  "image_field": "image",
  "index_web_pages_for_search": 1,
- "links": [
-  {
-   "group": "Allowed Items",
-   "link_doctype": "Party Specific Item",
-   "link_fieldname": "party"
-  }
- ],
- "modified": "2022-12-01 13:09:07.420663",
+ "links": [],
+ "modified": "2022-12-29 14:07:40.246389",
  "modified_by": "Administrator",
  "module": "cms-dt",
  "name": "Customer CMS",
@@ -413,7 +338,7 @@
   }
  ],
  "quick_entry": 1,
- "search_fields": "customer_name,customer_group,territory, mobile_no,primary_address",
+ "search_fields": "customer_name,mobile_no,primary_address",
  "show_name_in_global_search": 1,
  "sort_field": "modified",
  "sort_order": "ASC",

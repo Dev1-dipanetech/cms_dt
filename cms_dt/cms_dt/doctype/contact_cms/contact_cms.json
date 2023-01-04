@@ -3,6 +3,7 @@
  "allow_events_in_timeline": 1,
  "allow_import": 1,
  "allow_rename": 1,
+ "autoname": "format:{first_name}",
  "creation": "2022-12-01 13:10:48.452232",
  "default_view": "List",
  "doctype": "DocType",
@@ -23,7 +24,6 @@
   "gender",
   "phone",
   "mobile_no",
-  "company_name",
   "image",
   "sb_00",
   "google_contacts",
@@ -133,8 +133,7 @@
    "label": "Phone",
    "oldfieldname": "contact_no",
    "oldfieldtype": "Data",
-   "options": "Phone",
-   "read_only": 1
+   "options": "Phone"
   },
   {
    "fieldname": "mobile_no",
@@ -142,11 +141,6 @@
    "label": "Mobile No",
    "options": "Phone",
    "read_only": 1
-  },
-  {
-   "fieldname": "company_name",
-   "fieldtype": "Data",
-   "label": "Company Name"
   },
   {
    "fieldname": "image",
@@ -261,12 +255,39 @@
  "image_field": "image",
  "index_web_pages_for_search": 1,
  "is_tree": 1,
- "links": [],
- "modified": "2022-12-05 14:57:14.978786",
+ "links": [
+  {
+   "group": "Organisation",
+   "link_doctype": "Company CMS",
+   "link_fieldname": "contact"
+  },
+  {
+   "group": "Lead",
+   "link_doctype": "Lead CMS",
+   "link_fieldname": "contact"
+  },
+  {
+   "group": "Customer",
+   "link_doctype": "Customer CMS",
+   "link_fieldname": "contact"
+  },
+  {
+   "group": "Supplier",
+   "link_doctype": "Supplier CMS",
+   "link_fieldname": "contact"
+  },
+  {
+   "group": "Employee",
+   "link_doctype": "Employee CMS",
+   "link_fieldname": "contact"
+  }
+ ],
+ "modified": "2022-12-29 14:13:41.667927",
  "modified_by": "Administrator",
  "module": "cms-dt",
  "name": "Contact CMS",
  "name_case": "Title Case",
+ "naming_rule": "Expression",
  "nsm_parent_field": "parent_contact_cms",
  "owner": "Administrator",
  "permissions": [
